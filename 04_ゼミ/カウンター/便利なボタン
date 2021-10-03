@@ -1,9 +1,24 @@
 const display = document.getElementById("display")
-const plusButton = document.getElementById("plus-button")
+const button = document.getElementById("button")
 
 let count = 0
-plusButton.onclick = function() {
+
+const countUp = function() {
   count += 1
 
-  display.textContent = count
+  console.log(count)
+  display.textContent = count / 100
+}
+
+let id = null
+
+button.onclick = function() {
+  if (id === null) {
+    id = setInterval(countUp, 10)
+    button.textContent = "stop"
+  } else {
+    clearInterval(id)
+    id = null
+    button.textContent = "start"
+  }
 }
