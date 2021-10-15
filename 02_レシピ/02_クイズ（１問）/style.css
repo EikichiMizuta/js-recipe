@@ -1,9 +1,13 @@
 #quiz-image {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   object-fit: contain;
 }
 
 .hidden {
   display: none;
+}
+
+.choice {
+  float: left;
 }
