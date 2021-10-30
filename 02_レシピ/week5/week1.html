@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Vueカウンター</title>
+    <title>Vue カウンター</title>
   </head>
   <body>
     <div id="app">
+      <h1>
+        Vueカウンター
+      </h1>
       <div>
-        count:{{count}}
-      </div>
-      <div>
+        🔥{{ three }}🔥
         <button v-on:click="countUp">+1</button>
       </div>
     </div>
@@ -28,6 +27,17 @@
           countUp: function() {
             this.count += 1
           },
+        },
+        computed: {
+          three: function() {
+            if (this.count % 3 === 0) {
+              return `${this.count}!!!`
+            }
+            return this.count
+          },
+        },
+        created: function() {
+          this.count = 100
         },
       })
     </script>
